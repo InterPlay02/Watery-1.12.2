@@ -1,0 +1,23 @@
+{
+	"type": "minecraft:crafting_shaped",
+	
+	"pattern": 
+	[
+		"ACA",
+		"KKK",
+		"ACA"
+	],
+	
+	"key":
+	{
+		"A": {"item": "minecraft:sand", "data": 0},
+		"C": {"item": "watery:cement"},
+		"K": {"item": "minecraft:gravel"}
+	},
+	
+	"result":
+	{
+		"item": "watery:concrete",
+		"count": 8
+	}
+}

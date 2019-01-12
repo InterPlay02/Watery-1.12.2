@@ -1,0 +1,20 @@
+//Nomes originais dos items, máquinas e blocos do mod. 
+
+//Roupas
+item.mask.name=Máscara de Respiração
+item.overalls.name=Macacão
+item.rubber_boots.name=Botas de Borracha
+
+//Itens
+item.cement.name=Cimento
+item.concrete.name=Concreto
+item.limestone.name=Calcário
+item.iron_dust.name=Pó de Ferro
+
+//Sucos
+item.apple_juice.name=Suco de Maçã
+
+//Blocos
+tile.concrete_block.name=Bloco de Concreto
+tile.limestone_block.name=Calcário
+tile.mossy_bricks.name=Tijolos com Musgo

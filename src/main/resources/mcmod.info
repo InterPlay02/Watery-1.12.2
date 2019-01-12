@@ -1,0 +1,16 @@
+[
+{
+  "modid": "watery",
+  "name": "Watery Mod",
+  "description": "This is a mod about using the power of water! Since water collection, storage and water cleaning... And using it for ore doubling, or even quadruple!",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["_InterPlay_"],
+  "credits": "",
+  "logoFile": "assets/logo.png",
+  "screenshots": [],
+  "dependencies": []
+}
+]

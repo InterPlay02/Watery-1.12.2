@@ -1,0 +1,21 @@
+//Tradução para o Inglês
+
+//Roupas
+item.mask.name=Respiration Mask
+item.overalls.name=Overalls
+item.rubber_boots.name=Rubber Boots
+
+//Itens
+item.cement.name=Cement
+item.concrete.name=Concrete
+item.limestone.name=Limestone
+item.iron_dust.name=Iron Dust
+
+//Sucos
+item.apple_juice.name=Apple Juice
+
+//Blocos
+tile.concrete_block.name=Concrete Block
+tile.limestone_block.name=Limestone
+tile.mossy_bricks.name=Mossy Bricks
+

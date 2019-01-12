@@ -1,0 +1,16 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	
+	"ingredients": 
+	[
+		{"item": "watery:limestone"},
+		{"item": "watery:iron_dust"},
+		{"item": "minecraft:clay_ball"}
+	],
+	
+	"result":
+	{
+		"item": "watery:cement",
+		"count": 4
+	}
+}
