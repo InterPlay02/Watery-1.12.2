@@ -18,3 +18,6 @@ item.apple_juice.name=Suco de Maçã
 tile.concrete_block.name=Bloco de Concreto
 tile.limestone_block.name=Calcário
 tile.mossy_bricks.name=Tijolos com Musgo
+
+//Abas do criativo
+itemGroup.tabwatery=Watery Mod

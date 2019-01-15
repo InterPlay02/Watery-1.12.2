@@ -17,8 +17,8 @@ public class ModBlocks
 	public static final List<Block> BLOCKS = new ArrayList<Block>();
 	
 	public static final Block CONCRETE_BLOCK = new ConcreteBlock("concrete_block", Material.ROCK);
-	public static final Block MOSSY_BRICKS = new LimestoneBlock("mossy_bricks", Material.ROCK);
-	public static final Block LIMESTONE_BLOCK = new MossyBricks("limestone_block", Material.ROCK);
+	public static final Block MOSSY_BRICKS = new MossyBricks("mossy_bricks", Material.ROCK);
+	public static final Block LIMESTONE_BLOCK = new LimestoneBlock("limestone_block", Material.ROCK);
 	//public static final Block ENERGY_GENERATOR = new EnergyGenerator("energy_generator");
 	
 }

@@ -1,13 +1,12 @@
 package com.interplay.watery;
 
-import com.interplay.watery.init.ModItems;
+import com.interplay.watery.creativetabs.TabWatery;
 import com.interplay.watery.init.ModSmeltingRecipes;
 import com.interplay.watery.proxy.CommonProxy;
 import com.interplay.watery.util.Reference;
 import com.interplay.watery.world.ModWorldGen;
 
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
@@ -20,6 +19,8 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 @Mod(modid = Reference.MOD_ID, name = Reference.NAME, version = Reference.VERSION)
 
 public class Main {
+	
+	public static final CreativeTabs tabwatery = new TabWatery("tabwatery");
 
 	@Instance
 	public static Main instance;
@@ -44,19 +45,4 @@ public class Main {
 	{
 		
 	}
-	
-	public static final CreativeTabs WATERY = new CreativeTabs("Watery")
-	{
-		@SuppressWarnings("unused")
-		public ItemStack createIcon()
-		{ 
-			return new ItemStack(ModItems.CONCRETE);
-		}
-
-		@Override
-		public ItemStack getTabIconItem()
-		{
-			return null;
-		}
-	};
 }

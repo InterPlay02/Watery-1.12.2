@@ -19,3 +19,5 @@ tile.concrete_block.name=Concrete Block
 tile.limestone_block.name=Limestone
 tile.mossy_bricks.name=Mossy Bricks
 
+//Abas do criativo
+itemGroup.tabwatery=Watery Mod

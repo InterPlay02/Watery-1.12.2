@@ -3,13 +3,13 @@ package com.interplay.watery.init;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.interplay.watery.Main;
 import com.interplay.watery.items.ItemBase;
 import com.interplay.watery.items.OxygenMask;
 import com.interplay.watery.items.OxygenTank;
 import com.interplay.watery.items.armor.ArmorBase;
 import com.interplay.watery.util.Reference;
 
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
@@ -32,8 +32,8 @@ public class ModItems {
 	public static final Item IRON_DUST = new ItemBase("iron_dust");
 	
 	//Roupa de Borracha
-	public static final Item MASK = new OxygenMask("mask", CreativeTabs.TOOLS, OXYGEN_MASK, EntityEquipmentSlot.HEAD);
-	public static final Item OVERALLS = new OxygenTank("overalls", CreativeTabs.TOOLS, OXYGEN_TANK, EntityEquipmentSlot.CHEST);
+	public static final Item MASK = new OxygenMask("mask", Main.tabwatery, OXYGEN_MASK, EntityEquipmentSlot.HEAD);
+	public static final Item OVERALLS = new OxygenTank("overalls", Main.tabwatery, OXYGEN_TANK, EntityEquipmentSlot.CHEST);
 	public static final Item RUBBER_BOOTS = new ArmorBase("rubber_boots", ARMOR_MATERIAL_RUBBER, 1, EntityEquipmentSlot.FEET);
 	
 	//Sucos                   Nome do suco                  Nome nos arquivos / Se animais podem comer       Efeito de poção (tipo)  Duração  É de beacon? Exibe Partículas?
