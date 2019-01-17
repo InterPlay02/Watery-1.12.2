@@ -20,6 +20,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class Main {
 	
+	//Aba do Criativo "Main.tabwatery".
 	public static final CreativeTabs tabwatery = new TabWatery("tabwatery");
 
 	@Instance
@@ -31,12 +32,14 @@ public class Main {
 	@EventHandler
 	public static void PreInit(FMLPreInitializationEvent event)
 	{
+		//Ativar geração de mundo aqui:
 		GameRegistry.registerWorldGenerator(new ModWorldGen(), 3);
 	}
 	
 	@EventHandler
 	public static void init(FMLInitializationEvent event)
 	{
+		//Ativar receitas de fornalha aqui:
 		ModSmeltingRecipes.init();
 	}
 	

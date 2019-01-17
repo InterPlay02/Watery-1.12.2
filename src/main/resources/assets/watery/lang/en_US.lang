@@ -14,10 +14,11 @@ item.iron_dust.name=Iron Dust
 //Sucos
 item.apple_juice.name=Apple Juice
 
-//Blocos
+//Blocos e máquinas
 tile.concrete_block.name=Concrete Block
 tile.limestone_block.name=Limestone
 tile.mossy_bricks.name=Mossy Bricks
+tile.crusher.name=Crusher
 
 //Abas do criativo
 itemGroup.tabwatery=Watery Mod

@@ -1,0 +1,12 @@
+{
+	"parent": "block/orientable",
+	"textures": {
+		"particle": "watery:blocks/algo_off",
+		"up": "watery:blocks/algo_off",
+		"down": "watery:blocks/algo_off",
+		"north": "watery:blocks/algo_off",
+		"east": "watery:blocks/algo_side1",
+		"south": "watery:blocks/algo_side3",
+		"west": "watery:blocks/algo_side2"
+	}
+}
