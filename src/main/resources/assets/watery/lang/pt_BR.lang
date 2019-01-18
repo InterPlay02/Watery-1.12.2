@@ -20,5 +20,8 @@ tile.limestone_block.name=Calcário
 tile.mossy_bricks.name=Tijolos com Musgo
 tile.crusher.name=Triturador
 
+//Nomes que das máquinas (Gui)
+container.energy_generator=Gerador de Energia
+
 //Abas do criativo
 itemGroup.tabwatery=Watery Mod

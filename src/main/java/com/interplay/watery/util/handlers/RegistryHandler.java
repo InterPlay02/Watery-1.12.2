@@ -1,5 +1,6 @@
 package com.interplay.watery.util.handlers;
 
+import com.interplay.watery.Main;
 import com.interplay.watery.init.ModBlocks;
 import com.interplay.watery.init.ModItems;
 import com.interplay.watery.util.IHasModel;
@@ -10,6 +11,7 @@ import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.network.NetworkRegistry;
 
 @EventBusSubscriber
 public class RegistryHandler
@@ -45,4 +47,10 @@ public class RegistryHandler
 			}
 		}
 	}
+	
+	public static void initRegistries()
+	{
+		NetworkRegistry.INSTANCE.registerGuiHandler(Main.instance, new GuiHandler());	
+	}
+
 }

@@ -9,5 +9,6 @@ public class Reference
 	public static final String CLIENT_PROXY_CLASS = "com.interplay.watery.proxy.ClientProxy";
 	public static final String COMMON_PROXY_CLASS = "com.interplay.watery.proxy.CommonProxy";
 	
-	public static final int GUI_CRUSHER = 0;
+	public static final int GUI_CRUSHER = 1;
+	public static final int GUI_ENERGY_GENERATOR = 2;
 }

@@ -20,5 +20,8 @@ tile.limestone_block.name=Limestone
 tile.mossy_bricks.name=Mossy Bricks
 tile.crusher.name=Crusher
 
+//Nomes que das máquinas (Gui)
+container.energy_generator=Energy Generator
+
 //Abas do criativo
 itemGroup.tabwatery=Watery Mod

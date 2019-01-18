@@ -4,6 +4,8 @@ import com.interplay.watery.creativetabs.TabWatery;
 import com.interplay.watery.init.ModSmeltingRecipes;
 import com.interplay.watery.proxy.CommonProxy;
 import com.interplay.watery.util.Reference;
+import com.interplay.watery.util.handlers.RegistryHandler;
+import com.interplay.watery.util.handlers.TileEntityHandler;
 import com.interplay.watery.world.ModWorldGen;
 
 import net.minecraft.creativetab.CreativeTabs;
@@ -32,15 +34,15 @@ public class Main {
 	@EventHandler
 	public static void PreInit(FMLPreInitializationEvent event)
 	{
-		//Ativar geração de mundo aqui:
-		GameRegistry.registerWorldGenerator(new ModWorldGen(), 3);
+		TileEntityHandler.registerTileEntities();
+		GameRegistry.registerWorldGenerator(new ModWorldGen(), 3); //Ativa a geração de mundo aqui
 	}
 	
 	@EventHandler
 	public static void init(FMLInitializationEvent event)
 	{
-		//Ativar receitas de fornalha aqui:
-		ModSmeltingRecipes.init();
+		RegistryHandler.initRegistries();
+		ModSmeltingRecipes.init(); //Ativa as receitas de fornalha aqui.
 	}
 	
 	@EventHandler

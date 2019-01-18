@@ -4,6 +4,7 @@ import java.util.Random;
 
 import com.interplay.watery.Main;
 import com.interplay.watery.blocks.BlockBase;
+import com.interplay.watery.blocks.tileentity.TileEntityMachineCrusher;
 import com.interplay.watery.init.ModBlocks;
 import com.interplay.watery.util.Reference;
 
@@ -175,11 +176,5 @@ public class MachineCrusher extends BlockBase implements ITileEntityProvider
 	public boolean isFullCube(IBlockState state)
 	{
 		return false;
-	}
-
-	@Override
-	public TileEntity createNewTileEntity(World worldIn, int meta)
-	{
-		return null;
 	}
 }
