@@ -7,8 +7,8 @@ import com.interplay.watery.blocks.Box;
 import com.interplay.watery.blocks.ConcreteBlock;
 import com.interplay.watery.blocks.LimestoneBlock;
 import com.interplay.watery.blocks.MossyBricks;
-//import com.interplay.watery.blocks.machines.EnergyGenerator;
 //import com.interplay.watery.blocks.machines.MachineCrusher;
+import com.interplay.watery.blocks.machines.EnergyGenerator;
 
 //import com.interplay.watery.blocks.EnergyGenerator;
 
@@ -22,7 +22,7 @@ public class ModBlocks
 	public static final Block CONCRETE_BLOCK = new ConcreteBlock("concrete_block", Material.ROCK);
 	public static final Block MOSSY_BRICKS = new MossyBricks("mossy_bricks", Material.ROCK);
 	public static final Block LIMESTONE_BLOCK = new LimestoneBlock("limestone_block", Material.ROCK);
-	//public static final Block ENERGY_GENERATOR = new EnergyGenerator("energy_generator");
+	public static final Block ENERGY_GENERATOR = new EnergyGenerator("energy_generator");
 	
 	//public static final Block CRUSHER = new MachineCrusher("crusher");
 	//public static final Block ENERGY_GENERATOR = new EnergyGenerator("energy_generator");

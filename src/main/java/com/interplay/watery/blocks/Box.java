@@ -10,6 +10,7 @@ import net.minecraft.block.BlockContainer;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
@@ -123,6 +124,5 @@ public class Box extends BlockContainer
 	{
 		return false;
 	}
-	
-	public static ModelBox Render = new ModelBox(getRenderType(defaultBlockState));
+
 }

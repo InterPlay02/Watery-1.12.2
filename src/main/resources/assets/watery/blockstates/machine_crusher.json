@@ -1,0 +1,43 @@
+{
+	"variants":
+	{
+		"crushing=false,facing=north": { "model": "watery:crusher" },
+		"crushing=false,facing=east": { "model": "watery:crusher", "y": 90},
+		"crushing=false,facing=south": { "model": "watery:crusher", "y": 180},
+		"crushing=false,facing=west": { "model": "watery:crusher", "y": 270},
+		"crushing=true,facing=north": { "model": "watery:active_crusher" },
+		"crushing=true,facing=east": { "model": "watery:active_crusher", "y": 90},
+		"crushing=true,facing=south": { "model": "watery:active_crusher", "y": 180},
+		"crushing=true,facing=west": { "model": "watery:active_crusher", "y": 270}
+	},
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [0, 180, 0],
+			"translation": [0, 0, -3.75],
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"thirdperson_lefthand": {
+			"translation": [0, 0, -3.75],
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"firstperson_righthand": {
+			"rotation": [0, -180, 0],
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"firstperson_lefthand": {
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"ground": {
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"gui": {
+			"rotation": [34.5, 47, 0],
+			"translation": [3, 1.75, 0],
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"fixed": {
+			"translation": [4, 0, -1.75],
+			"scale": [0.5, 0.5, 0.5]
+		}
+	}
+}

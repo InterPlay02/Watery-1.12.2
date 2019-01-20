@@ -124,8 +124,7 @@ public class TileEntityEnergyGenerator extends TileEntity implements ITickable
 	
 	public int getMaxEnergyStored()
 	{
-		//Essa parte é pra saber qual é o máximo de energia armazenada.
-		return this.getMaxEnergyStored();
+		return storage.getMaxEnergyStored();
 	}
 	
 	public int getField(int id)

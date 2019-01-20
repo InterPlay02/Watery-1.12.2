@@ -1040,36 +1040,6 @@
 			}
 		}
 	],
-	"display": {
-		"thirdperson_righthand": {
-			"rotation": [0, 180, 0],
-			"translation": [0, 0, -3.75],
-			"scale": [0.5, 0.5, 0.5]
-		},
-		"thirdperson_lefthand": {
-			"translation": [0, 0, -3.75],
-			"scale": [0.5, 0.5, 0.5]
-		},
-		"firstperson_righthand": {
-			"rotation": [0, -180, 0],
-			"scale": [0.5, 0.5, 0.5]
-		},
-		"firstperson_lefthand": {
-			"scale": [0.5, 0.5, 0.5]
-		},
-		"ground": {
-			"scale": [0.5, 0.5, 0.5]
-		},
-		"gui": {
-			"rotation": [34.5, 47, 0],
-			"translation": [3, 1.75, 0],
-			"scale": [0.5, 0.5, 0.5]
-		},
-		"fixed": {
-			"translation": [4, 0, -1.75],
-			"scale": [0.5, 0.5, 0.5]
-		}
-	},
 	"groups": [
 		{
 			"name": "Serras",
