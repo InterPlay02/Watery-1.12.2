@@ -10,7 +10,7 @@ import net.minecraftforge.energy.CapabilityEnergy;
 
 public class TileEntityEnergy extends TileEntity implements ITickable
 {
-	private ModEnergyStorage storage = new ModEnergyStorage(100000);
+	private ModEnergyStorage storage = new ModEnergyStorage(50000);
 	
 	@Override
 	public <T> T getCapability(Capability<T> capability, EnumFacing facing)

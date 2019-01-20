@@ -19,6 +19,7 @@ tile.concrete_block.name=Concrete Block
 tile.limestone_block.name=Limestone
 tile.mossy_bricks.name=Mossy Bricks
 tile.crusher.name=Crusher
+tile.energy_generator.name=Energy Generator
 
 //Nomes que das máquinas (Gui)
 container.energy_generator=Energy Generator

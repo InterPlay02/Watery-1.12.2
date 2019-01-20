@@ -22,8 +22,12 @@ public class ContainerEnergyGenerator extends Container
 		this.tileentity = tileentity;
 		IItemHandler handler = tileentity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null);
 		
+		//Esse aqui é o slot da tile entity em questão. (Nesse caso: o gerador de energia)
 		this.addSlotToContainer(new SlotItemHandler(handler, 0, 80, 33));
+		//this.addSlotToContainer(new SlotItemHandler(itemHandler, index, xPosition, yPosition))
+		//Essa linha acima diz: (algo, ID do slot, distância do canto esquerdo da imagem em pixels, distância do topo da imagem em pixels)
 		
+		//Daqui
 		for(int y = 0; y < 3; y++)
 		{
 			for(int x = 0; x < 9; x++)
@@ -36,6 +40,7 @@ public class ContainerEnergyGenerator extends Container
 		{
 			this.addSlotToContainer(new Slot(player, x, 8 + x * 18, 142));
 		}
+		//Até aqui, são os slots default do inventário.
 	}
 	
 	@Override
@@ -54,7 +59,7 @@ public class ContainerEnergyGenerator extends Container
 	public void detectAndSendChanges() 
 	{
 		super.detectAndSendChanges();
-		
+		//Essa parte detecta e mantém atualizado tudo dentro da gui e do contêiner da tile entity em questão.
 		for(int i = 0; i < this.listeners.size(); ++i) 
 		{
 			IContainerListener listener = (IContainerListener)this.listeners.get(i);
@@ -69,6 +74,8 @@ public class ContainerEnergyGenerator extends Container
 	@Override
 	public ItemStack transferStackInSlot(EntityPlayer playerIn, int index)
 	{
+		//Essa parte aqui checa coisas no inventário relacionadas ao ato de usar o Shift+clique.
+		
 		ItemStack stack = ItemStack.EMPTY;
 		Slot slot = (Slot)this.inventorySlots.get(index);
 		

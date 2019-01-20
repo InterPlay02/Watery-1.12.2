@@ -11,4 +11,5 @@ public class Reference
 	
 	public static final int GUI_CRUSHER = 1;
 	public static final int GUI_ENERGY_GENERATOR = 2;
+	public static final int GUI_BOX = 3;
 }
