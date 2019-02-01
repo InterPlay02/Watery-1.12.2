@@ -1,7 +1,8 @@
 {
-	"variants":
-	{
+	"variants":	{
 		"normal": { "model": "watery:concrete_block" }
 	}
-
 }
+
+//Os jsons da pasta blockstates olham diretamente para dentro do script do bloco em questão. Nesse caso "concrete_block".
+//Obviamente, dentro da classe ModBlocks, eu já tenho setado que a classe "ConcreteBlock" é representada por este ^ nome nos jsons.

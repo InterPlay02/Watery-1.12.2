@@ -1,6 +1,4 @@
 {
-	"credit": "Made with Blockbench",
-	"parent": "Crusher",
 	"textures": {
 		"0": "watery:blocks/saw_blades",
 		"3": "watery:blocks/entradas",
@@ -9,7 +7,7 @@
 		"6": "watery:blocks/crusher_iron",
 		"7": "watery:blocks/glass_gray",
 		"8": "watery:blocks/controller_interface",
-		"particle": "watery:blocks/entradas"
+		"particle": "watery:blocks/crusher_iron"
 	},
 	"elements": [
 		{

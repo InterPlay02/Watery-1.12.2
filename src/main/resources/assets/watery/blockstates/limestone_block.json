@@ -3,3 +3,6 @@
 		"normal": { "model": "watery:limestone_block" }
 	}
 }
+
+//Os jsons da pasta blockstates olham diretamente para dentro do script do bloco em questão. Nesse caso "limestone_block".
+//Obviamente, dentro da classe ModBlocks, eu já tenho setado que a classe "LimestoneBlock" é representada por este ^ nome nos jsons.

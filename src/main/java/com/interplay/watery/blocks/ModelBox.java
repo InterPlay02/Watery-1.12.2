@@ -123,29 +123,7 @@ public class ModelBox extends ModelBase
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5)
     { 
-        this.Borda6.render(f5);
-        this.Borda5_1.render(f5);
-        this.Borda12_1.render(f5);
-        this.Borda2.render(f5);
-        this.Borda1.render(f5);
-        this.Borda5.render(f5);
-        this.Borda10_2.render(f5);
-        this.Borda10_3.render(f5);
-        this.Borda3.render(f5);
-        this.Borda4.render(f5);
-        this.Borda9.render(f5);
-        this.BoxInner.render(f5);
-        this.Borda10_1.render(f5);
-        this.Borda5_2.render(f5);
-        this.Borda12_2.render(f5);
-        this.Borda10.render(f5);
-        this.Borda12.render(f5);
-        this.Borda12_4.render(f5);
-        this.Borda10_4.render(f5);
-        this.Borda8.render(f5);
-        this.Borda12_3.render(f5);
-        this.Borda7.render(f5);
-        this.Borda11.render(f5);
+    	super.render(entity, f, f1, f2, f3, f4, f5);
     }
 
     /**

@@ -40,7 +40,6 @@ public class Main {
 	@EventHandler
 	public static void init(FMLInitializationEvent event)
 	{
-		RegistryHandler.initRegistries();
 		ModSmeltingRecipes.init(); //Ativa as receitas de fornalha aqui.
 	}
 	

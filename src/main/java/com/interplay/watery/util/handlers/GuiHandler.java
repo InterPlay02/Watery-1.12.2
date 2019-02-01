@@ -1,7 +1,5 @@
 package com.interplay.watery.util.handlers;
 
-import com.interplay.watery.blocks.containers.ContainerBox;
-import com.interplay.watery.blocks.tileentity.TileEntityBox;
 import com.interplay.watery.util.Reference;
 
 import net.minecraft.entity.player.EntityPlayer;

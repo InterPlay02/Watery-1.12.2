@@ -3,3 +3,6 @@
 		"normal": { "model": "watery:mossy_bricks" }
 	}
 }
+
+//Os jsons da pasta blockstates olham diretamente para dentro do script do bloco em questão. Nesse caso "mossy_bricks".
+//Obviamente, dentro da classe ModBlocks, eu já tenho setado que a classe "MossyBricks" é representada por este ^ nome nos jsons.

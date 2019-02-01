@@ -18,8 +18,8 @@ item.apple_juice.name=Suco de Maçã
 tile.concrete_block.name=Bloco de Concreto
 tile.limestone_block.name=Calcário
 tile.mossy_bricks.name=Tijolos com Musgo
-tile.crusher.name=Triturador
 tile.energy_generator.name=Gerador de Energia
+tile.box.name=Caixote de Madeira
 
 //Nomes que das máquinas (Gui)
 container.energy_generator=Gerador de Energia

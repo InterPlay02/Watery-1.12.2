@@ -1,0 +1,6 @@
+{
+	"parent": "watery:block/box"
+}
+
+//Os jsons dentro da pasta "item" que não são do tipo "item/generated" olham para dentro do json especificado (box) para
+//saber como o item em questão deve ser renderizado. Tanto no inventário, quanto na mão.

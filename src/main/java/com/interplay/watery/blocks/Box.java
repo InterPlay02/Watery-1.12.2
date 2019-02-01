@@ -1,37 +1,45 @@
 package com.interplay.watery.blocks;
 
 import com.interplay.watery.Main;
-import com.interplay.watery.blocks.tileentity.TileEntityBox;
 import com.interplay.watery.init.ModBlocks;
 import com.interplay.watery.init.ModItems;
-import com.interplay.watery.util.handlers.GuiHandler;
+import com.interplay.watery.util.IHasModel;
+import com.interplay.watery.blocks.BlockBase;
 
-import net.minecraft.block.BlockContainer;
+import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.properties.IProperty;
+import net.minecraft.block.properties.PropertyDirection;
+import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.client.model.ModelBase;
-import net.minecraft.entity.item.EntityItem;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.inventory.IInventory;
+import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.inventory.InventoryHelper;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
-import net.minecraft.tileentity.TileEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockRenderLayer;
-import net.minecraft.util.EnumBlockRenderType;
 import net.minecraft.util.EnumFacing;
-import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class Box extends BlockContainer
+public class Box extends BlockBase implements IHasModel
 {
+	//Aqui é definido o tamanho do hitbox do bloco
+	public static final AxisAlignedBB BOX = new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 1.0D, 1.0D);
+	
+	//Aqui é definido que o bloco gira apenas na horizontal (no eixo y).
+	public static final PropertyDirection FACING = PropertyDirection.create("facing", EnumFacing.Plane.HORIZONTAL);
+	{
+		this.setDefaultState(blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
+	}
+	
+	//Aqui são importados os aspectos básicos de bloco do BlockBase e ainda são adicionadas estas propriedades.
 	public Box(String name, Material material)
 	{
-		super(Material.WOOD);
+		super(name, Material.WOOD);
 		setUnlocalizedName(name);
 		setRegistryName(name);
 		setCreativeTab(Main.tabwatery);
@@ -41,78 +49,70 @@ public class Box extends BlockContainer
 		ModItems.ITEMS.add(new ItemBlock(this).setRegistryName(this.getRegistryName()));
 	}
 
+	//Aqui fica definido que a frente do bloco será, por padrão, o lado norte do bloco
 	@Override
-	public TileEntity createNewTileEntity(World worldIn, int meta)
+	public IBlockState getStateFromMeta(int meta)
 	{
-		return new TileEntityBox();
-	}
-	
-	@Override
-	public boolean hasTileEntity(IBlockState state)
-	{
-		return true;
-	}
-	
-	@Override
-	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand,
-																	EnumFacing side, float hitX, float hitY, float hitZ)
-	{
-		if (worldIn.isRemote) return true;
-
-		playerIn.openGui(Main.instance, GuiHandler.getGuiID(), worldIn, pos.getX(), pos.getY(), pos.getZ());
-		return true;
-	}
-	
-	@Override
-	public void breakBlock(World worldIn, BlockPos pos, IBlockState state)
-	{
-		IInventory inventory = worldIn.getTileEntity(pos) instanceof IInventory ? (IInventory)worldIn.getTileEntity(pos) : null;
-		if (inventory != null)
+		EnumFacing facing = EnumFacing.getFront(meta);
+		
+		if(facing.getAxis() == EnumFacing.Axis.Y)
 		{
-			for (int i = 0; i < inventory.getSizeInventory(); i++)
-			{
-				// If the slot is not empty
-				if (!inventory.getStackInSlot(i).isEmpty())
-				{
-					// Create a new entity item with the item stack in the slot
-					EntityItem item = new EntityItem(worldIn, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, inventory.getStackInSlot(i));
-
-					// Apply some random motion to the item
-					float multiplier = 0.1f;
-					float motionX = worldIn.rand.nextFloat() - 0.5f;
-					float motionY = worldIn.rand.nextFloat() - 0.5f;
-					float motionZ = worldIn.rand.nextFloat() - 0.5f;
-
-					item.motionX = motionX * multiplier;
-					item.motionY = motionY * multiplier;
-					item.motionZ = motionZ * multiplier;
-
-					// Spawn the item in the world
-					worldIn.spawnEntity(item);
-				}
-			}
-
-			// Clear the inventory so nothing else (such as another mod) can do anything with the items
-			inventory.clear();
+			facing = EnumFacing.NORTH;
 		}
-
-		// Super MUST be called last because it removes the tile entity
-		super.breakBlock(worldIn, pos, state);
+		
+		return getDefaultState().withProperty(FACING, facing);
 	}
 	
-	// the block is smaller than a full cube, specify dimensions here
+	@Override
+	public int getMetaFromState(IBlockState state)
+	{
+		return ((EnumFacing)state.getValue(FACING)).getIndex();
+	}
+	
+	@Override
+	protected BlockStateContainer createBlockState()
+	{
+		return new BlockStateContainer(this, new IProperty[] {FACING});
+	}
+	
+	//Aqui dizemos que o bloco deve ser colocado sempre de acordo com a direção que o player
+	//estiver olhando horizontalmente, porém oposta.
+	@Override
+    public IBlockState getStateForPlacement(World worldIn, BlockPos pos,EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer) 
+    {
+	  return getDefaultState().withProperty(FACING, placer.getHorizontalFacing().getOpposite());
+    }
+	
+	private boolean canBlockStay(World worldIn, BlockPos pos)
+	{
+		return worldIn.getBlockState(pos.down()).isSideSolid(worldIn, pos, EnumFacing.UP);
+	}
+	
+	//Aqui o jogo verifica se o bloco pode ser colocado ali.
+	@Override
+	public boolean canPlaceBlockAt(World worldIn, BlockPos pos)
+	{
+		return super.canPlaceBlockAt(worldIn, pos) ? this.canBlockStay(worldIn, pos) : false;
+	}
+	
+	@Override
+	public void neighborChanged(IBlockState state, World worldIn, BlockPos pos, Block blockIn, BlockPos fromPos)
+	{
+		if(!this.canBlockStay(worldIn, pos))
+		{
+			worldIn.setBlockToAir(pos);
+			InventoryHelper.spawnItemStack(worldIn, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(ModBlocks.BOX));
+		}
+	}
+	
+	//Aqui nós dizemos que o getBoundingBox deve olhar para as medidas que se encontram na variável chamada BOX.
 	@Override
 	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos)
 	{
-		return new AxisAlignedBB(1.0F, 0, 1.0F, 1.0F, 1.0F, 1.0F);
+		return BOX;
 	}
 	
-	@SideOnly(Side.CLIENT)
-	public BlockRenderLayer getBlockLayer()
-	{
-		return BlockRenderLayer.SOLID;
-	}
-	
+	//Aqui dizemos que o bloco não é opaco.
 	@Override
 	public boolean isOpaqueCube(IBlockState state)
 	{
@@ -120,9 +120,30 @@ public class Box extends BlockContainer
 	}
 	
 	@Override
+	public BlockRenderLayer getBlockLayer()
+	{
+		return BlockRenderLayer.CUTOUT;
+	}
+	
+	//Aqui dizemos que o bloco não é um bloco perfeito. Tem outro formato.
+	@Override
 	public boolean isFullCube(IBlockState state)
 	{
 		return false;
 	}
+	
+	//Aqui dizemos que o bloco não ocupa o formato 1x1x1 perfeito.
+	@Override
+	public boolean isFullBlock(IBlockState state)
+	{
+		return false;
+	}
 
+	//Aqui o modelo 3D é registrado.
+	@Override
+	public void registerModels()
+	{
+		Main.proxy.registerItemRenderer(Item.getItemFromBlock(this), 0, "inventory");
+		
+	}
 }
