@@ -4,11 +4,7 @@
         "facing=north,generating=false": { "model": "watery:energy_generator", "y": 180 },
         "facing=east,generating=false": { "model": "watery:energy_generator", "y": 270 },
         "facing=south,generating=false": { "model": "watery:energy_generator" },
-        "facing=west,generating=false": { "model": "watery:energy_generator", "y": 90 },
-        "facing=north,generating=true": { "model": "watery:energy_generator_on", "y": 180 },
-        "facing=east,generating=true": { "model": "watery:energy_generator_on", "y": 270 },
-        "facing=south,generating=true": { "model": "watery:energy_generator_on" },
-        "facing=west,generating=true": { "model": "watery:energy_generator_on", "y": 90  }
+        "facing=west,generating=false": { "model": "watery:energy_generator", "y": 90 }
     }
 
 //Os jsons da pasta blockstates olham diretamente para dentro do script do bloco em questão. Nesse caso "box".
