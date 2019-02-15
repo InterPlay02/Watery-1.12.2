@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.interplay.watery.blocks.Box;
 import com.interplay.watery.blocks.ConcreteBlock;
+import com.interplay.watery.blocks.EnergyGenerator;
 import com.interplay.watery.blocks.LimestoneBlock;
 import com.interplay.watery.blocks.MossyBricks;
 
@@ -21,7 +22,7 @@ public class ModBlocks
 	//public static final Block ENERGY_GENERATOR = new EnergyGenerator("energy_generator");
 	
 	//public static final Block CRUSHER = new MachineCrusher("crusher");
-	//public static final Block ENERGY_GENERATOR = new EnergyGenerator("energy_generator");
+	public static final Block ENERGY_GENERATOR = new EnergyGenerator("energy_generator", Material.IRON);
 	public static final Block BOX = new Box("box", Material.WOOD);
 	
 }

@@ -2,25 +2,26 @@ package com.interplay.watery.energy;
 
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.energy.EnergyStorage;
+import net.minecraftforge.energy.IEnergyStorage;
 
-public class ModEnergyStorage extends EnergyStorage
+public class ModEnergyStorage extends EnergyStorage implements IEnergyStorage
 {
-	public ModEnergyStorage(int capacity)
+	public ModEnergyStorage(int capacity, int capacity1)
     {
         super(capacity, capacity, capacity, 0);
     }
 
-    public ModEnergyStorage(int capacity, int maxTransfer)
+    public ModEnergyStorage(int capacity, int capacity1, int maxTransfer)
     {
         super(capacity, maxTransfer, maxTransfer, 0);
     }
 
-    public ModEnergyStorage(int capacity, int maxReceive, int maxExtract)
+    public ModEnergyStorage(int capacity, int capacity1, int maxReceive, int maxExtract)
     {
         super(capacity, maxReceive, maxExtract, 0);
     }
 
-    public ModEnergyStorage(int capacity, int maxReceive, int maxExtract, int energy)
+    public ModEnergyStorage(int capacity, int capacity1, int maxReceive, int maxExtract, int energy)
     {
     	super(capacity, maxReceive, maxExtract, energy);
     }

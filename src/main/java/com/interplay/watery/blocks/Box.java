@@ -41,12 +41,8 @@ public class Box extends BlockBase implements IHasModel
 	{
 		super(name, Material.WOOD);
 		setUnlocalizedName(name);
-		setRegistryName(name);
 		setCreativeTab(Main.tabwatery);
 		setSoundType(SoundType.WOOD);
-		
-		ModBlocks.BLOCKS.add(this);
-		ModItems.ITEMS.add(new ItemBlock(this).setRegistryName(this.getRegistryName()));
 	}
 
 	//Aqui fica definido que a frente do bloco será, por padrão, o lado norte do bloco

@@ -1,7 +1,6 @@
 package com.interplay.watery.blocks.guis;
 
 import com.interplay.watery.blocks.containers.ContainerEnergyGenerator;
-import com.interplay.watery.blocks.tileentity.TileEntityEnergyGenerator;
 import com.interplay.watery.util.Reference;
 
 import net.minecraft.client.gui.inventory.GuiContainer;
@@ -9,14 +8,14 @@ import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.util.ResourceLocation;
 
-public class GuiEnergyGenerator extends GuiContainer
+public class TesteDeGuiContainer extends GuiContainer
 {
 	//Aqui é onde ficamos sabendo onde está a textura da gui da tile entity em questão.
 	private static final ResourceLocation TEXTURES = new ResourceLocation(Reference.MOD_ID + ":textures/gui/energy_generator.png");
 	private final InventoryPlayer player;
 	private final TileEntityEnergyGenerator tileentity;
 	
-	public GuiEnergyGenerator(InventoryPlayer player, TileEntityEnergyGenerator tileentity) 
+	public TesteDeGuiContainer(InventoryPlayer player, TileEntityEnergyGenerator tileentity) 
 	{
 		//Essa parte aqui funde as funcionalidades do inventário do player com o contêiner da tile entity em questão.
 		//É necessário declará-las acima, como sendo variáveis.
