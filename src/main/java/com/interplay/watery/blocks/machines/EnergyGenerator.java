@@ -166,7 +166,7 @@ public class EnergyGenerator extends BlockBase
         return true;
     }
 	
-	//Aqui o modelo 3D é registrado, de maneira que apareça no inventário.
+	//Aqui o modelo 3D é registrado, de maneira que apareça no inventário. Isto se refere ao item dentro da pasta "resources/models/item".
 	@Override
 	public void registerModels()
 	{

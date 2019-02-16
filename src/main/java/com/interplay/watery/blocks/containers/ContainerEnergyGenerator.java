@@ -1,6 +1,6 @@
 package com.interplay.watery.blocks.containers;
 
-import com.interplay.watery.energy.TileEntityEnergyGenerator;
+import com.interplay.watery.blocks.tileentity.TileEntityEnergyGenerator;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
@@ -8,21 +8,19 @@ import net.minecraft.inventory.Container;
 import net.minecraft.inventory.IContainerListener;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
-import net.minecraftforge.items.CapabilityItemHandler;
-import net.minecraftforge.items.IItemHandler;
-import net.minecraftforge.items.SlotItemHandler;
 
 public class ContainerEnergyGenerator extends Container
 {
-	private final TileEntityEnergyGenerator tileentity;
-    private int energy, cooktime;
+	private final TileEntityEnergyGenerator inventory;
+    private int energy, cookTime, totalCookTime, burnTime, currentBurnTime;
    
-    public ContainerEnergyGenerator(InventoryPlayer player, TileEntityEnergyGenerator tileentity)
+    public ContainerEnergyGenerator(InventoryPlayer player, TileEntityEnergyGenerator inventory)
     {
-        this.tileentity = tileentity;
-        IItemHandler handler = tileentity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null);
+        this.inventory = inventory;
        
-        this.addSlotToContainer(new SlotItemHandler(handler, 0, 80, 33));
+        this.addSlotToContainer(new Slot(inventory, 0, 63, 30));
+        this.addSlotToContainer(new Slot(inventory, 1, 37, 19));
+        this.addSlotToContainer(new Slot(inventory, 2, 37, 51));
        
         for(int y = 0; y < 3; y++)
         {
@@ -41,13 +39,13 @@ public class ContainerEnergyGenerator extends Container
     @Override
     public boolean canInteractWith(EntityPlayer playerIn)
     {
-        return this.tileentity.isUsableByPlayer(playerIn);
+        return this.inventory.isUsableByPlayer(playerIn);
     }
    
     @Override
     public void updateProgressBar(int id, int data)
     {
-        this.tileentity.setField(id, data);
+        this.inventory.setField(id, data);
     }
    
     @Override
@@ -58,12 +56,12 @@ public class ContainerEnergyGenerator extends Container
         for(int i = 0; i < this.listeners.size(); ++i)
         {
             IContainerListener listener = (IContainerListener)this.listeners.get(i);
-            if(this.energy != this.tileentity.getField(0)) listener.sendWindowProperty(this, 0, this.tileentity.getField(0));
-            if(this.cooktime != this.tileentity.getField(1)) listener.sendWindowProperty(this, 1, this.tileentity.getField(1));
+            if(this.energy != this.inventory.getField(0)) listener.sendWindowProperty(this, 0, this.inventory.getField(0));
+            if(this.cookTime != this.inventory.getField(1)) listener.sendWindowProperty(this, 1, this.inventory.getField(1));
         }
        
-        this.energy = this.tileentity.getField(0);
-        this.cooktime = this.tileentity.getField(1);
+        this.energy = this.inventory.getField(0);
+        this.cookTime = this.inventory.getField(1);
     }
    
     @Override

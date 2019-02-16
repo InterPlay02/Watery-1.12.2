@@ -1,6 +1,6 @@
 package com.interplay.watery.util.handlers;
 
-import com.interplay.watery.energy.TileEntityEnergyGenerator;
+import com.interplay.watery.blocks.tileentity.TileEntityEnergyGenerator;
 
 import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.event.AttachCapabilitiesEvent;
