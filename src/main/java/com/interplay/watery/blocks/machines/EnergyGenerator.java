@@ -2,8 +2,10 @@ package com.interplay.watery.blocks.machines;
 
 import com.interplay.watery.Main;
 import com.interplay.watery.blocks.BlockBase;
+import com.interplay.watery.init.ModBlocks;
 import com.interplay.watery.util.Reference;
 
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockHorizontal;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -13,8 +15,10 @@ import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.inventory.InventoryHelper;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.EnumBlockRenderType;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
@@ -30,7 +34,7 @@ public class EnergyGenerator extends BlockBase
 	//Aqui é definido o tamanho do hitbox do bloco
 	public static final AxisAlignedBB ENERGY_GENERATOR = new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 2.0D, 2.0D);
 	
-	//Aqui nós dizemos que o getBoundingBox deve olhar para as medidas que se encontram na variável chamada BOX.
+	//Aqui nós dizemos que o getBoundingBox deve olhar para as medidas que se encontram na variável chamada ENERGY_GENERATOR.
 	@Override
 	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos)
 	{
@@ -125,14 +129,33 @@ public class EnergyGenerator extends BlockBase
 		return ((EnumFacing)state.getValue(FACING)).getIndex();
 	}
 	
-	//Aqui o modelo 3D é registrado, de maneira que apareça no inventário.
+	//Aqui dizemos que o bloco não é opaco.
 	@Override
-	public void registerModels()
+	public boolean isOpaqueCube(IBlockState state)
 	{
-		Main.proxy.registerItemRenderer(Item.getItemFromBlock(this), 0, "inventory");
-		
+		return false;
 	}
-
+	
+	@Override
+	public BlockRenderLayer getBlockLayer()
+	{
+		return BlockRenderLayer.CUTOUT;
+	}
+	
+	//Aqui dizemos que o bloco não é um CUBO perfeito. Tem outro formato.
+	@Override
+	public boolean isFullCube(IBlockState state)
+	{
+		return false;
+	}
+	
+	//Aqui dizemos que o bloco não ocupa o formato 1x1x1 perfeito.
+	@Override
+	public boolean isFullBlock(IBlockState state)
+	{
+		return false;
+	}
+	
 	@Override
 	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
 	{
@@ -143,5 +166,11 @@ public class EnergyGenerator extends BlockBase
         return true;
     }
 	
-	
+	//Aqui o modelo 3D é registrado, de maneira que apareça no inventário.
+	@Override
+	public void registerModels()
+	{
+		Main.proxy.registerItemRenderer(Item.getItemFromBlock(this), 0, "inventory");
+		
+	}
 }

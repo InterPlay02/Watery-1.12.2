@@ -1,14 +1,13 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "watery:models/energy_generator_botton1",
-		"1": "watery:models/energy_generator_right",
-		"2": "watery:models/energy_generator_front",
-		"3": "watery:models/energy_generator_left",
-		"4": "watery:models/energy_generator_back",
-		"5": "watery:models/glass_gray",
-		"6": "watery:models/energy_generator_topdown",
-		"particle": "watery:models/energy_generator_front"
+		"0": "watery:blocks/energy_generator_botton1",
+		"1": "watery:blocks/energy_generator_right",
+		"2": "watery:blocks/energy_generator_front",
+		"3": "watery:blocks/energy_generator_left",
+		"4": "watery:blocks/energy_generator_back",
+		"6": "watery:blocks/energy_generator_topdown",
+		"particle": "watery:blocks/energy_generator_front"
 	},
 	"elements": [
 		{
@@ -97,14 +96,6 @@
 				"north": {"uv": [3.2, 4.48, 4.4, 8.28], "texture": "#2"},
 				"east": {"uv": [15.5, 5, 16, 7.5], "texture": "#1"},
 				"west": {"uv": [3.84, 4.48, 4.44, 8.28], "texture": "#2"}
-			}
-		},
-		{
-			"name": "Vidro",
-			"from": [2, 16, 0.425],
-			"to": [14, 22, 1.425],
-			"faces": {
-				"north": {"uv": [0, 7, 16, 14], "texture": "#5"}
 			}
 		},
 		{
@@ -324,57 +315,5 @@
 				"up": {"uv": [10, 4, 13, 7], "texture": "#6"}
 			}
 		}
-	],
-	"display": {
-		"thirdperson_righthand": {
-			"rotation": [0, 90, 0],
-			"scale": [0.5, 0.5, 0.5]
-		},
-		"thirdperson_lefthand": {
-			"rotation": [0, 90, 0],
-			"scale": [0.5, 0.5, 0.5]
-		},
-		"firstperson_righthand": {
-			"rotation": [0, 108, 0],
-			"scale": [0.5, 0.5, 0.5]
-		},
-		"firstperson_lefthand": {
-			"rotation": [0, 108, 0],
-			"scale": [0.5, 0.5, 0.5]
-		},
-		"ground": {
-			"scale": [0.5, 0.5, 0.5]
-		},
-		"gui": {
-			"rotation": [12, 148, 0],
-			"translation": [-1.75, -3.25, 0],
-			"scale": [0.4, 0.4, 0.4]
-		},
-		"fixed": {
-			"rotation": [0, 90, 0],
-			"translation": [-4, -3.5, 0],
-			"scale": [0.5, 0.5, 0.5]
-		}
-	},
-	"groups": [0,
-		{
-			"name": "Frente",
-			"children": [1, 2, 3, 4, 5, 6, 7, 8]
-		},
-		{
-			"name": "Base",
-			"children": [9, 10, 11]
-		},
-		{
-			"name": "SideRight",
-			"children": [12, 13, 14, 15, 16, 17, 18, 19]
-		},
-		{
-			"name": "SideLeft",
-			"children": [20, 21, 22, 23]
-		},
-		{
-			"name": "Back",
-			"children": [24, 25, 26, 27]
-		}, 28]
+	]
 }

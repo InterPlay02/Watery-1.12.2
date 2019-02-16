@@ -1,9 +1,9 @@
 {
 	"variants": 
     {
-        "facing=north": { "model": "watery:energy_generator", "y": 180 },
-        "facing=east": { "model": "watery:energy_generator", "y": 270 },
-        "facing=south": { "model": "watery:energy_generator" },
-        "facing=west": { "model": "watery:energy_generator", "y": 90 }
+        "facing=north": { "model": "watery:energy_generator"},
+        "facing=east": { "model": "watery:energy_generator", "y": 90},
+        "facing=south": { "model": "watery:energy_generator", "y": 180},
+        "facing=west": { "model": "watery:energy_generator", "y": 270}
     }
 }

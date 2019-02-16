@@ -1,6 +1,9 @@
 {
     "variants": 
     {
-        "normal": {"model": "watery:box"}
+        "facing=north": { "model": "watery:box", "y": 180 },
+        "facing=east": { "model": "watery:box", "y": 270 },
+        "facing=south": { "model": "watery:box" },
+        "facing=west": { "model": "watery:box", "y": 90 }
     }
 }

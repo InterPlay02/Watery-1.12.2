@@ -1,6 +1,29 @@
 {
-	"parent": "watery:block/box"
+	"parent": "watery:block/box",
+	"display": {
+		"thirdperson_righthand": {
+			"translation": [0, 2, 0],
+			"scale": [0.3, 0.3, 0.3]
+		},
+		"thirdperson_lefthand": {
+			"translation": [0, 2, 0],
+			"scale": [0.3, 0.3, 0.3]
+		},
+		"firstperson_righthand": {
+			"rotation": [0, 43, 0],
+			"translation": [1, 0, 0],
+			"scale": [0.3, 0.3, 0.25]
+		},
+		"firstperson_lefthand": {
+			"rotation": [0, 43, 0],
+			"scale": [0.3, 0.3, 0.25]
+		},
+		"ground": {
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"gui": {
+			"rotation": [30, 45, 0],
+			"scale": [0.5, 0.5, 0.5]
+		}
+	}
 }
-
-//Os jsons dentro da pasta "item" que não são do tipo "item/generated" olham para dentro do json especificado (box) para
-//saber como o item em questão deve ser renderizado. Tanto no inventário, quanto na mão.
