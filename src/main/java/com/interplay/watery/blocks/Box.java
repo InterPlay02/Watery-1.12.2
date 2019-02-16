@@ -27,9 +27,6 @@ import net.minecraft.world.World;
 
 public class Box extends BlockBase implements IHasModel
 {
-	//Aqui é definido o tamanho do hitbox do bloco
-	public static final AxisAlignedBB BOX = new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 1.0D, 1.0D);
-	
 	//Aqui é definido que o bloco gira apenas na horizontal (no eixo y).
 	public static final PropertyDirection FACING = PropertyDirection.create("facing", EnumFacing.Plane.HORIZONTAL);
 	{
@@ -101,13 +98,6 @@ public class Box extends BlockBase implements IHasModel
 		}
 	}
 	
-	//Aqui nós dizemos que o getBoundingBox deve olhar para as medidas que se encontram na variável chamada BOX.
-	@Override
-	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos)
-	{
-		return BOX;
-	}
-	
 	//Aqui dizemos que o bloco não é opaco.
 	@Override
 	public boolean isOpaqueCube(IBlockState state)
@@ -121,7 +111,7 @@ public class Box extends BlockBase implements IHasModel
 		return BlockRenderLayer.CUTOUT;
 	}
 	
-	//Aqui dizemos que o bloco não é um bloco perfeito. Tem outro formato.
+	//Aqui dizemos que o bloco não é um CUBO perfeito. Tem outro formato.
 	@Override
 	public boolean isFullCube(IBlockState state)
 	{

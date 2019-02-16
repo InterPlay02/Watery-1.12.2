@@ -1,4 +1,4 @@
-package com.interplay.watery.blocks.machines;
+package com.interplay.watery.blocks.models;
 
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;
