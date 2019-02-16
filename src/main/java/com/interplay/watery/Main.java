@@ -5,7 +5,7 @@ import com.interplay.watery.init.ModSmeltingRecipes;
 import com.interplay.watery.proxy.CommonProxy;
 import com.interplay.watery.util.Reference;
 import com.interplay.watery.util.handlers.RegistryHandler;
-import com.interplay.watery.world.ModWorldGen;
+import com.interplay.watery.world.WateryWorldGen;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.fml.common.Mod;
@@ -35,7 +35,7 @@ public class Main {
 	public static void PreInit(FMLPreInitializationEvent event)
 	{
 		RegistryHandler.preInitRegistries(event);
-		GameRegistry.registerWorldGenerator(new ModWorldGen(), 3); //Ativa a geração de mundo aqui
+		GameRegistry.registerWorldGenerator(new WateryWorldGen(), 3); //Ativa a geração de mundo aqui
 	}
 	
 	@EventHandler
