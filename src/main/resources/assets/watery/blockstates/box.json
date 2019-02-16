@@ -4,6 +4,3 @@
         "normal": {"model": "watery:box"}
     }
 }
-
-//Os jsons da pasta blockstates olham diretamente para dentro do script do bloco em questão. Nesse caso "box".
-//Obviamente, dentro da classe ModBlocks, eu já tenho setado que a classe "Box" é representada por este ^ nome nos jsons.
