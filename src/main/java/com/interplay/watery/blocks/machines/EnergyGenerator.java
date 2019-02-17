@@ -31,14 +31,28 @@ import net.minecraft.world.World;
 
 public class EnergyGenerator extends BlockBase
 {
-	//Aqui é definido o tamanho do hitbox do bloco
-	public static final AxisAlignedBB ENERGY_GENERATOR = new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 2.0D, 2.0D);
+	//Aqui é definido o tamanho do hitbox do bloco, sendo 'x' leste-/oeste+ e 'z' norte-/sul+.
+	public static final AxisAlignedBB ENERGY_GENERATOR_NORTH = new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 2.0D, 2.0D);
+	public static final AxisAlignedBB ENERGY_GENERATOR_SOUTH = new AxisAlignedBB(0.0D, 0.0D, 1.0D, 1.0D, 2.0D, -1.0D);
+	public static final AxisAlignedBB ENERGY_GENERATOR_EAST = new AxisAlignedBB(-1.0D, 0.0D, 0.0D, 1.0D, 2.0D, 1.0D);
+	public static final AxisAlignedBB ENERGY_GENERATOR_WEST = new AxisAlignedBB(0.0D, 0.0D, 0.0D, 2.0D, 2.0D, 1.0D);
 	
 	//Aqui nós dizemos que o getBoundingBox deve olhar para as medidas que se encontram na variável chamada ENERGY_GENERATOR.
 	@Override
 	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos)
 	{
-		return ENERGY_GENERATOR;
+		switch(((EnumFacing)state.getValue(FACING)))
+        {
+            case NORTH:
+            default:
+                return ENERGY_GENERATOR_NORTH;
+            case EAST:
+                return ENERGY_GENERATOR_EAST;
+            case WEST:
+                return ENERGY_GENERATOR_WEST;
+            case SOUTH:
+                return ENERGY_GENERATOR_SOUTH;
+        }
 	}
 	
 	public static final PropertyDirection FACING = BlockHorizontal.FACING;
@@ -72,11 +86,6 @@ public class EnergyGenerator extends BlockBase
             else if (face == EnumFacing.EAST && east.isFullBlock() && !west.isFullBlock()) face = EnumFacing.WEST;
             worldIn.setBlockState(pos, state.withProperty(FACING, face), 2);
         }
-	}
-	
-	public static void setState(boolean active, World worldIn, BlockPos pos)
-	{
-		IBlockState state = worldIn.getBlockState(pos);
 	}
 	
 	@Override

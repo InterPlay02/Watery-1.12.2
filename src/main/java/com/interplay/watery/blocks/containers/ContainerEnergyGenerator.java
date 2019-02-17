@@ -12,7 +12,7 @@ import net.minecraft.item.ItemStack;
 public class ContainerEnergyGenerator extends Container
 {
 	private final TileEntityEnergyGenerator inventory;
-    private int energy, cookTime, totalCookTime, burnTime, currentBurnTime;
+    private int energy, cookTime;
    
     public ContainerEnergyGenerator(InventoryPlayer player, TileEntityEnergyGenerator inventory)
     {
