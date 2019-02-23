@@ -2,7 +2,6 @@ package com.interplay.watery.blocks;
 
 import com.interplay.watery.Main;
 import com.interplay.watery.init.ModBlocks;
-import com.interplay.watery.init.ModItems;
 import com.interplay.watery.util.IHasModel;
 import com.interplay.watery.blocks.BlockBase;
 
@@ -16,13 +15,10 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.inventory.InventoryHelper;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.EnumFacing;
-import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
 public class Box extends BlockBase implements IHasModel
