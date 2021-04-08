@@ -32,6 +32,8 @@ public class OxygenMask extends ItemArmor implements IHasModel
 		Main.proxy.registerItemRenderer(this, 0, "inventory");
 	}
 	
+	public ModelOxygenMask model1 = new ModelOxygenMask();
+	
 	@Override
 	public ModelBiped getArmorModel(EntityLivingBase entityLiving, ItemStack itemStack, EntityEquipmentSlot armorSlot, ModelBiped _default)
 	{
@@ -39,8 +41,6 @@ public class OxygenMask extends ItemArmor implements IHasModel
 		{
 			if(itemStack.getItem() instanceof ItemArmor)
 			{
-				ModelOxygenMask model1 = new ModelOxygenMask();
-				
 				model1.bipedHead.showModel = armorSlot == EntityEquipmentSlot.HEAD;
 				
 				model1.isChild = _default.isChild;
